@@ -104,3 +104,5 @@ Angular-App : **4200**,
 Composer-Playground : **8080**
 
 ** Eğer lokalde çalışıyorsanız, yaptığınız değişiklikler **kaydedilmeyecek** ve uygulamayı her seferinde yeniden başlatacaksınız. Bunun için bir sunucuya bağlanmanızı tavsiye ediyoruz. Angular-App veya Composer-Playground u başlatmak için baştaki koşullar geçerliyken (Angular için `npm start` ve Playground için `composer-playground`) Composer-Rest-Server a her seferinde iş ağı tanımlamak istemiyorsanız, geçerli komutu ~/fabric-dev-servers/tutorial-network içerisindeyken girin `composer-rest-server -c admin@tutorial-network -n never -w true`
+
+* Kuruluma, Composer-Rest-Server a **Queries(Sorgular)** ekleyerek devam edeceğiz, yakında buradan ulaşabilirsiniz.
