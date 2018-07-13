@@ -93,6 +93,8 @@ Uygulamayı başlatmak için ~/fabric-dev-servers/tutorial-network/angular-app d
 ![angular](https://user-images.githubusercontent.com/29989590/42679936-3a54a0ba-868c-11e8-949d-a35f559621d1.png)
 
 ** Eğer lokal bağlantıları tarayıcınız açmazsa işe yarayabilecek portlar:
-REST-Server-API : 3000
-Angular-App : 4200
+REST-Server-API : 3000, 
+Angular-App : 4200, 
 Composer-Playground : 8080
+
+** Eğer lokalde çalışıyorsanız, yaptığınız değişiklikler kaydedilmeyecek ve uygulamayı her seferinde yeniden başlatacaksınız. Bunun için bir sunucuya bağlanmanızı tavsiye ediyoruz. Angular-App veya Composer-Playground u başlatmak için baştaki koşullar geçerliyken (Angular için npm start ve Playground için composer-playground) Composer-Rest-Server a her seferinde iş ağı tanımlamak istemiyorsanız, geçerli komutu ~/fabric-dev-servers/tutorial-network içerisindeyken girin " composer-rest-server -c admin@tutorial-network -n never -w true "
