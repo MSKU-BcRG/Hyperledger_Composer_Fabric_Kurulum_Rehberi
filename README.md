@@ -77,21 +77,22 @@ tutorial-network içerisinden devam ederek " composer-rest-server " komutunu gir
 
 ![rest](https://user-images.githubusercontent.com/29989590/42679402-78852758-868a-11e8-8d09-9ab434040fb2.png)
 
+# Angular-App Kurulumu #
 
+Bir Angular 4 uygulaması edinebilmek için tutorial-network içerisinden devam ederek " yo hyperledger-composer:angular " komutunu giriniz.
 
+* Çalışan iş ağına bağlanmak istediğinizi sorduğunda cevabı "Evet(y)" olarak girin.
+* Proje adı, açıklama, editör adı, emaili serbestçe girebilirsiniz.
+* Business Network Kart sorduğunda " admin@tutorial-network " ü giriniz.
+* " Connect to an existing REST API " seçeneğini seçiniz.
+* REST Server adresi olarak http://localhost ; sunucu portu olarak ise 3000 i girin.
+* " Namespaces are not used " seçeneğini işaretleyin.
 
+Uygulamayı başlatmak için ~/fabric-dev-servers/tutorial-network/angular-app dizinine girin. Ardından " npm start " dediğinizde uygulama yüklenecek ve 4200 portuna bağlanacaktır.
 
+![angular](https://user-images.githubusercontent.com/29989590/42679936-3a54a0ba-868c-11e8-949d-a35f559621d1.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+** Eğer lokal bağlantıları tarayıcınız açmazsa işe yarayabilecek portlar:
+REST-Server-API : 3000
+Angular-App : 4200
+Composer-Playground : 8080
