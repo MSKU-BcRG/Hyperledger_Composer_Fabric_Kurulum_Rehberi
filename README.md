@@ -1,15 +1,15 @@
-# Hyperledger_Composer_Fabric_Kurulum_Rehberi #
+# Hyperledger Composer ve Fabric Kurulum Rehberi #
 
 Merhaba, hazırsanız kuruluma başlıyoruz. 
 Ana Kaynak : https://hyperledger.github.io/composer/unstable/installing/installing-index.html
 
-Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmamıza izin veriyor. Composer kurulumuna başlamadan önce ön koşullar sağlanmalıdır. Bu sayfada okulumuz makinelerinin çoğunun UBUNTU 16.04 kullandığını varsayarak bu dağıtım için kurulum yapacağız.
+Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmamıza izin veriyor. Composer kurulumuna başlamadan önce **ön koşullar** sağlanmalıdır. Bu sayfada okulumuz makinelerinin çoğunun **UBUNTU 16.04** kullandığını varsayarak bu dağıtım için kurulum yapacağız.
 
 Ön Koşulların Kurulumu
 -----------------------
 
 Ön Koşullar: Ubuntu Linux 14.04 / 16.04 LTS (ikisi de 64-bit) İşletim Sistemi, Docker Engine: 17.03 veya üzeri versiyon, Docker-Compose:1.8 veya üzeri versiyon, Node: 8.9 veya üzeri versiyon (versiyon 9 desteklenmiyor), npm: v5.x, git: 2.9.x veya üzeri versiyon, Python: 2.7.x versiyon, bir kod editörü (tercihe bağlı).
-** ileride kullanacağımız bir komut bize ön koşulları indirecek fakat makineden makineye farklı hatalar alınabiliyor. Hata düzeyini minimalize etmek için siz de ön koşulları şimdiden manuel olarak indirebilirsiniz. (örneğin:" sudo apt-get install docker.io " vb.)
+** ileride kullanacağımız bir komut bize ön koşulları indirecek fakat makineden makineye farklı hatalar alınabiliyor. Hata düzeyini minimalize etmek için siz de ön koşulları şimdiden manuel olarak indirebilirsiniz. (örneğin` sudo apt-get install docker.io ` vb.)
 
 Verilen komutları -sırasıyla- girin:
 * curl -O https://hyperledger.github.io/composer/unstable/prereqs-ubuntu.sh
@@ -38,7 +38,7 @@ Hyperledger Fabric Kurulumu
 * tar -xvf fabric-dev-servers.tar.gz
 * ./downloadFabric.sh  // Fabric kurulumu burada başlıyor.
 * fabric-dev-servers klasörü içerisinde olduğunuzdan emin olarak " ./startFabric.sh " komutunu girin. Bu aşamada eksik bir kurulum yaptıysanız hata alabilirsiniz, çözüm için issue lara bakınız.
-* composer-playground   // Bu komut sizi 8080 portunda lokal tarayıcınıza bağlayacaktır. Playground u lokal olarak kullanabilirsiniz.
+* composer-playground   // Bu komut sizi *8080* portunda lokal tarayıcınıza bağlayacaktır. Playground u lokal olarak kullanabilirsiniz.
 
 ![playground](https://user-images.githubusercontent.com/29989590/42679442-9f277a78-868a-11e8-89de-7df184ef5fe2.png)
 
@@ -48,7 +48,7 @@ Geliştiriciler İçin
 ----------------------
 
 Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile fabric-dev-servers içinde bulunduğunuzdan emin olduktan sonra, " yo hyperledger-composer:businessnetwork " komutunu girin. Ağ adına " tutorial-network " diyebilirsiniz.
-** Verilen ağ adları, kart adları gibi değerlerin kolaylık sağlaması açısından aynı girilmesi tavsiye ediliyor, aksi halde her komutu kendi network, kart, klasör adınıza göre düzenlemek zorunda kalabilirsiniz.
+** Verilen ağ adları, kart adları gibi değerlerin kolaylık sağlaması açısından **aynı girilmesi** tavsiye ediliyor, aksi halde her komutu kendi network, kart, klasör adınıza göre düzenlemek zorunda kalabilirsiniz.
 
 * Editör açıklaması, ismi, emaili kısımlarını serbestçe doldurabilirsiniz.
 * Lisans için Apache-2.0 ı seçin.
@@ -83,7 +83,7 @@ tutorial-network içerisinden devam ederek " composer-rest-server " komutunu gir
 ![rest](https://user-images.githubusercontent.com/29989590/42679402-78852758-868a-11e8-8d09-9ab434040fb2.png)
 
 Angular-App Kurulumu
---------------------------
+-----------------------
 
 Bir Angular 4 uygulaması edinebilmek için tutorial-network içerisinden devam ederek " yo hyperledger-composer:angular " komutunu giriniz.
 
@@ -94,13 +94,13 @@ Bir Angular 4 uygulaması edinebilmek için tutorial-network içerisinden devam 
 * REST Server adresi olarak http://localhost ; sunucu portu olarak ise 3000 i girin.
 * " Namespaces are not used " seçeneğini işaretleyin.
 
-Uygulamayı başlatmak için ~/fabric-dev-servers/tutorial-network/angular-app dizinine girin. Ardından " npm start " dediğinizde uygulama yüklenecek ve 4200 portuna bağlanacaktır.
+Uygulamayı başlatmak için ~/fabric-dev-servers/tutorial-network/angular-app dizinine girin. Ardından " npm start " dediğinizde uygulama yüklenecek ve **4200** portuna bağlanacaktır.
 
 ![angular](https://user-images.githubusercontent.com/29989590/42679936-3a54a0ba-868c-11e8-949d-a35f559621d1.png)
 
 ** Eğer lokal bağlantıları tarayıcınız açmazsa işe yarayabilecek portlar:
-REST-Server-API : 3000, 
-Angular-App : 4200, 
-Composer-Playground : 8080
+REST-Server-API : **3000**, 
+Angular-App : **4200**, 
+Composer-Playground : **8080**
 
-** Eğer lokalde çalışıyorsanız, yaptığınız değişiklikler kaydedilmeyecek ve uygulamayı her seferinde yeniden başlatacaksınız. Bunun için bir sunucuya bağlanmanızı tavsiye ediyoruz. Angular-App veya Composer-Playground u başlatmak için baştaki koşullar geçerliyken (Angular için npm start ve Playground için composer-playground) Composer-Rest-Server a her seferinde iş ağı tanımlamak istemiyorsanız, geçerli komutu ~/fabric-dev-servers/tutorial-network içerisindeyken girin " composer-rest-server -c admin@tutorial-network -n never -w true "
+** Eğer lokalde çalışıyorsanız, yaptığınız değişiklikler **kaydedilmeyecek** ve uygulamayı her seferinde yeniden başlatacaksınız. Bunun için bir sunucuya bağlanmanızı tavsiye ediyoruz. Angular-App veya Composer-Playground u başlatmak için baştaki koşullar geçerliyken (Angular için **npm start** ve Playground için **composer-playground**) Composer-Rest-Server a her seferinde iş ağı tanımlamak istemiyorsanız, geçerli komutu ~/fabric-dev-servers/tutorial-network içerisindeyken girin " **composer-rest-server -c admin@tutorial-network -n never -w true** "
