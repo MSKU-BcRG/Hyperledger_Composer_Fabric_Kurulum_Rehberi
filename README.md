@@ -5,7 +5,8 @@ Ana Kaynak : https://hyperledger.github.io/composer/unstable/installing/installi
 
 Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmamıza izin veriyor. Composer kurulumuna başlamadan önce ön koşullar sağlanmalıdır. Bu sayfada okulumuz makinelerinin çoğunun UBUNTU 16.04 kullandığını varsayarak bu dağıtım için kurulum yapacağız.
 
-# Ön Koşulların Kurulumu #
+Ön Koşulların Kurulumu
+-----------------------
 
 Ön Koşullar: Ubuntu Linux 14.04 / 16.04 LTS (ikisi de 64-bit) İşletim Sistemi, Docker Engine: 17.03 veya üzeri versiyon, Docker-Compose:1.8 veya üzeri versiyon, Node: 8.9 veya üzeri versiyon (versiyon 9 desteklenmiyor), npm: v5.x, git: 2.9.x veya üzeri versiyon, Python: 2.7.x versiyon, bir kod editörü (tercihe bağlı).
 ** ileride kullanacağımız bir komut bize ön koşulları indirecek fakat makineden makineye farklı hatalar alınabiliyor. Hata düzeyini minimalize etmek için siz de ön koşulları şimdiden manuel olarak indirebilirsiniz. (örneğin:" sudo apt-get install docker.io " vb.)
@@ -17,7 +18,8 @@ Verilen komutları -sırasıyla- girin:
 
 " "PROGRAM_ADI" --version " komutuyla versiyonlarınızın doğru olduğundan emin olun. İşleminizden sonra "sudo apt-get update" yapabilirsiniz.
 
-# Geliştirme Ortamının İndirilmesi #
+Geliştirme Ortamının İndirilmesi
+---------------------------------
 
 Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen komutları -sırasıyla- girin:
 ** Not: Bu aşamalarda aldığınız herhangi bir hatayı göz ardı etmemeniz tavsiye edilir. Hata ileriki aşamalarda tekrarlayacaktır. Çözümler için issue lara bakabilirsiniz. ** Not: npm, "su" ya da "sudo" ile kullanılamaz.
@@ -28,7 +30,8 @@ Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen kom
 * npm install -g yo
 * npm install -g composer-playground
 
-# Hyperledger Fabric Kurulumu #
+Hyperledger Fabric Kurulumu
+------------------------------
 
 * mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers //fabric-dev-servers klasörü açıp içine giriyoruz. Bu klasör ana klasörümüz oldu.
 * curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
@@ -41,7 +44,8 @@ Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen kom
 
 ** Bu aşamada aldığınız ve çözümünü bulamadığınız herhangi bir hata için, kurulumu kaldırıp yenilemeyi deneyebilirsiniz, bakınız : https://hyperledger.github.io/composer/unstable/installing/development-tools.html
 
-# Geliştiriciler İçin #
+Geliştiriciler İçin
+----------------------
 
 Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile fabric-dev-servers içinde bulunduğunuzdan emin olduktan sonra, " yo hyperledger-composer:businessnetwork " komutunu girin. Ağ adına " tutorial-network " diyebilirsiniz.
 ** Verilen ağ adları, kart adları gibi değerlerin kolaylık sağlaması açısından aynı girilmesi tavsiye ediliyor, aksi halde her komutu kendi network, kart, klasör adınıza göre düzenlemek zorunda kalabilirsiniz.
@@ -67,7 +71,8 @@ Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile fabr
 * composer card import --file networkadmin.card
 * composer network ping --card admin@tutorial-network  // komutlarını giriyoruz. // Bu komutlarla iş ağımızı dağıtmış olduk.
 
-# Composer-Rest-Server #
+Composer-Rest-Server
+--------------------------
 
 tutorial-network içerisinden devam ederek " composer-rest-server " komutunu giriyoruz. Açılan kısma aşağıda verilen değerleri giriniz:
 * Kart adı olarak: admin@tutorial-network 
@@ -77,7 +82,8 @@ tutorial-network içerisinden devam ederek " composer-rest-server " komutunu gir
 
 ![rest](https://user-images.githubusercontent.com/29989590/42679402-78852758-868a-11e8-8d09-9ab434040fb2.png)
 
-# Angular-App Kurulumu #
+Angular-App Kurulumu
+--------------------------
 
 Bir Angular 4 uygulaması edinebilmek için tutorial-network içerisinden devam ederek " yo hyperledger-composer:angular " komutunu giriniz.
 
