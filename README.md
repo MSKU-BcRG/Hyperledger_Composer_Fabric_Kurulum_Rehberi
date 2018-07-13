@@ -37,10 +37,7 @@ Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen kom
 * fabric-dev-servers klasörü içerisinde olduğunuzdan emin olarak " ./startFabric.sh " komutunu girin. Bu aşamada eksik bir kurulum yaptıysanız hata alabilirsiniz, çözüm için issue lara bakınız.
 * composer-playground   // Bu komut sizi 8080 portunda lokal tarayıcınıza bağlayacaktır. Playground u lokal olarak kullanabilirsiniz.
 
-
-
-
-
+![playground](https://user-images.githubusercontent.com/29989590/42679442-9f277a78-868a-11e8-89de-7df184ef5fe2.png)
 
 ** Bu aşamada aldığınız ve çözümünü bulamadığınız herhangi bir hata için, kurulumu kaldırıp yenilemeyi deneyebilirsiniz, bakınız : https://hyperledger.github.io/composer/unstable/installing/development-tools.html
 
@@ -77,7 +74,6 @@ tutorial-network içerisinden devam ederek " composer-rest-server " komutunu gir
 * Never use Namespaces
 * Generated API: No ; TLS Security: No ; Event Publication: Yes
 // Böylelikle API yi iş ağına ve blok zincirine bağlamış olduk.
-
 
 ![rest](https://user-images.githubusercontent.com/29989590/42679402-78852758-868a-11e8-8d09-9ab434040fb2.png)
 
