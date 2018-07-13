@@ -18,7 +18,7 @@ Verilen komutları sırasıyla girin:
 Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen komutları -sırasıyla- girin:
 ** Not: Bu aşamalarda aldığınız herhangi bir hatayı göz ardı etmemeniz tavsiye edilir. Hata ileriki aşamalarda tekrarlayacaktır. Çözümler için issue lara bakabilirsiniz. ** Not: npm, "su" ya da "sudo" ile kullanılamaz.
 
-* npm install -g composer-cli
+$ npm install -g composer-cli
 * npm install -g composer-rest-server
 * npm install -g generator-hyperledger-composer
 * npm install -g yo
