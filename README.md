@@ -5,7 +5,7 @@ Ana Kaynak : https://hyperledger.github.io/composer/unstable/installing/installi
 
 Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmamıza izin veriyor. Composer kurulumuna başlamadan önce **ön koşullar** sağlanmalıdır. Bu sayfada okulumuz makinelerinin çoğunun **UBUNTU 16.04** kullandığını varsayarak bu dağıtım için kurulum yapacağız.
 
-içerik
+İçerik
 -----------
 * [Ön Koşulların Kurulumu](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#%C3%96n-ko%C5%9Fullar%C4%B1n-kurulumu)
 * [Geliştirme Ortamının İndirilmesi](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#geli%C5%9Ftirme-ortam%C4%B1n%C4%B1n-%C4%B0ndirilmesi)
