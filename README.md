@@ -7,17 +7,24 @@ Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmam
 
 İçerik
 -----------
-* [Ön Koşulların Kurulumu](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#%C3%96n-ko%C5%9Fullar%C4%B1n-kurulumu)
+* [Ön Koşullar](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#%C3%96n-ko%C5%9Fullar%C4%B1n-kurulumu)
 * [Geliştirme Ortamının İndirilmesi](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#geli%C5%9Ftirme-ortam%C4%B1n%C4%B1n-%C4%B0ndirilmesi)
 * [Hyperledger Fabric Kurulumu](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#hyperledger-fabric-kurulumu)
 * [Geliştiriciler İçin](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#geli%C5%9Ftiriciler-%C4%B0%C3%A7in)
 * [Composer-Rest-Server](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#composer-rest-server)
 * [Angular-App Kurulumu](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#angular-app-kurulumu)
 
-Ön Koşulların Kurulumu
------------------------
+Ön Koşullar
+------------------
 
-Ön Koşullar: Ubuntu Linux 14.04 / 16.04 LTS (ikisi de 64-bit) İşletim Sistemi, Docker Engine: 17.03 veya üzeri versiyon, Docker-Compose:1.8 veya üzeri versiyon, Node: 8.9 veya üzeri versiyon (versiyon 9 desteklenmiyor), npm: v5.x, git: 2.9.x veya üzeri versiyon, Python: 2.7.x versiyon, bir kod editörü (tercihe bağlı).
+* Ubuntu Linux 14.04 / 16.04 LTS (ikisi de 64-bit) İşletim Sistemi
+* Docker Engine: 17.03 veya üzeri versiyon
+* Docker-Compose:1.8 veya üzeri versiyon 
+* Node: 8.9 veya üzeri versiyon (versiyon 9 desteklenmiyor)
+* npm: v5.x 
+* git: 2.9.x veya üzeri versiyon 
+* Python: 2.7.x versiyon 
+* Sevdiğiniz bir kod editörü (tercihe bağlı).
 ** ileride kullanacağımız bir komut bize ön koşulları indirecek fakat makineden makineye farklı hatalar alınabiliyor. Hata düzeyini minimalize etmek için siz de ön koşulları şimdiden manuel olarak indirebilirsiniz. (örneğin` sudo apt-get install docker.io ` vb.)
 
 Verilen komutları -sırasıyla- girin:
