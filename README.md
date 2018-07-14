@@ -25,6 +25,7 @@ Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmam
 * git: 2.9.x veya üzeri versiyon 
 * Python: 2.7.x versiyon 
 * Sevdiğiniz bir kod editörü (tercihe bağlı).
+
 ** ileride kullanacağımız bir komut bize ön koşulları indirecek fakat makineden makineye farklı hatalar alınabiliyor. Hata düzeyini minimalize etmek için siz de ön koşulları şimdiden manuel olarak indirebilirsiniz. (örneğin` sudo apt-get install docker.io ` vb.)
 
 Verilen komutları -sırasıyla- girin:
