@@ -49,11 +49,11 @@ Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen kom
 Hyperledger Fabric Kurulumu
 ------------------------------
 
-* `mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers` //fabric-dev-servers klasörü açıp içine giriyoruz. Bu klasör ana klasörümüz oldu.
+* `mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers` //**fabric-dev-servers** klasörü açıp içine giriyoruz. Bu klasör ana klasörümüz oldu.
 * `curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz`
 * `tar -xvf fabric-dev-servers.tar.gz`
 * `./downloadFabric.sh` // Fabric kurulumu burada başlıyor.
-* ~/fabric-dev-servers klasörü içerisinde olduğunuzdan emin olarak `./startFabric.sh `komutunu girin. Bu aşamada eksik bir kurulum yaptıysanız hata alabilirsiniz, çözüm için issue lara bakınız.
+* **~/fabric-dev-servers** klasörü içerisinde olduğunuzdan emin olarak `./startFabric.sh `komutunu girin. Bu aşamada eksik bir kurulum yaptıysanız hata alabilirsiniz, çözüm için issue lara bakınız.
 * `composer-playground`  // Bu komut sizi *8080* portunda lokal tarayıcınıza bağlayacaktır. Playground u lokal olarak kullanabilirsiniz.
 
 ![playground](https://user-images.githubusercontent.com/29989590/42679442-9f277a78-868a-11e8-89de-7df184ef5fe2.png)
@@ -63,7 +63,7 @@ Hyperledger Fabric Kurulumu
 Geliştiriciler İçin
 ----------------------
 
-Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile ~/fabric-dev-servers içinde bulunduğunuzdan emin olduktan sonra, ` yo hyperledger-composer:businessnetwork ` komutunu girin. Ağ adına **tutorial-network** diyebilirsiniz.
+Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile **~/fabric-dev-servers** içinde bulunduğunuzdan emin olduktan sonra, ` yo hyperledger-composer:businessnetwork ` komutunu girin. Ağ adına **tutorial-network** diyebilirsiniz.
 ** Verilen ağ adları, kart adları gibi değerlerin kolaylık sağlaması açısından **aynı girilmesi** tavsiye ediliyor, aksi halde her komutu kendi network, kart, klasör adınıza göre düzenlemek zorunda kalabilirsiniz.
 
 * Editör açıklaması, ismi, emaili kısımlarını serbestçe doldurabilirsiniz.
@@ -74,15 +74,15 @@ Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile ~/fa
 
 İş ağı tanımlamak için verilen adımları uygulayın:
 
-* ~/fabric-dev-servers/tutorial-network/models içerisinden " **org.example.mynetwork.cto** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
-* ~/fabric-dev-servers/tutorial-network/lib içerisindeki " **logic.js** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
-* ~/fabric-dev-servers/tutorial-network içerisindeki " **permissions.acl** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
+* **~/fabric-dev-servers/tutorial-network/models** içerisinden " **org.example.mynetwork.cto** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
+* **~/fabric-dev-servers/tutorial-network/lib** içerisindeki " **logic.js** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
+* **~/fabric-dev-servers/tutorial-network** içerisindeki " **permissions.acl** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
 
 İş ağını dağıtmak için verilen adımları uygulayın:
 
-* ~/fabric-dev-servers/tutorial-network içinde olduğunuzdan emin olarak `composer archive create -t dir -n . `komutunu girin. Bu durumda sonu **@0.0.1.bna** ile biten zip, klasörünüzün içerisinde olmalı.
-* cd .. ile çıkarak ~/fabric-dev-servers klasörüne geri dönüyoruz. Burada ` ./createPeerAdminCard.sh `komutunu giriyoruz.
-* Ardından tutorial-network e cd girerek ` composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.1.bna ` komutunu giriyoruz ve sırasıyla devam ediyoruz:
+* **~/fabric-dev-servers/tutorial-network** içinde olduğunuzdan emin olarak `composer archive create -t dir -n . `komutunu girin. Bu durumda sonu **@0.0.1.bna** ile biten zip, klasörünüzün içerisinde olmalı.
+* cd .. ile çıkarak **~/fabric-dev-servers** klasörüne geri dönüyoruz. Burada ` ./createPeerAdminCard.sh `komutunu giriyoruz.
+* Ardından **tutorial-network** e cd ile girerek ` composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.1.bna ` komutunu giriyoruz ve sırasıyla devam ediyoruz:
 * `composer network start --networkName tutorial-network --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card`
 * `composer card import --file networkadmin.card`
 * `composer network ping --card admin@tutorial-network`  // komutlarını giriyoruz. Bu komutlarla iş ağımızı dağıtmış olduk.
@@ -90,7 +90,7 @@ Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile ~/fa
 Composer-Rest-Server
 --------------------------
 
-~/fabric-dev-servers/tutorial-network içerisinden ` composer-rest-server `komutunu girince açılan kısma aşağıda verilen değerleri giriniz:
+**~/fabric-dev-servers/tutorial-network** içerisinden ` composer-rest-server `komutunu girince açılan kısma aşağıda verilen değerleri giriniz:
 * Kart adı olarak: **admin@tutorial-network**
 * **Never use Namespaces**
 * Generated API: **No** ; TLS Security: **No** ; Event Publication: **Yes**
@@ -101,7 +101,7 @@ Composer-Rest-Server
 Angular-App Kurulumu
 -----------------------
 
-Bir Angular 4 uygulaması edinebilmek için ~/fabric-dev-servers/tutorial-network içerisinden ` yo hyperledger-composer:angular` komutunu giriniz.
+Bir Angular 4 uygulaması edinebilmek için **~/fabric-dev-servers/tutorial-network** içerisinden ` yo hyperledger-composer:angular` komutunu giriniz.
 
 * Çalışan iş ağına bağlanmak istediğinizi sorduğunda cevabı **Evet(y)** olarak girin.
 * Proje adı, açıklama, editör adı, emaili serbestçe girebilirsiniz.
@@ -110,7 +110,7 @@ Bir Angular 4 uygulaması edinebilmek için ~/fabric-dev-servers/tutorial-networ
 * REST Server adresi olarak **http://localhost** ; sunucu portu olarak ise **3000** i girin.
 * **Namespaces are not used** seçeneğini işaretleyin.
 
-Uygulamayı başlatmak için ~/fabric-dev-servers/tutorial-network/angular-app dizinine girin. Ardından `npm start` dediğinizde uygulama yüklenecek ve **4200** portuna bağlanacaktır.
+Uygulamayı başlatmak için **~/fabric-dev-servers/tutorial-network/angular-app** dizinine girin. Ardından `npm start` dediğinizde uygulama yüklenecek ve **4200** portuna bağlanacaktır.
 
 ![angular](https://user-images.githubusercontent.com/29989590/42679936-3a54a0ba-868c-11e8-949d-a35f559621d1.png)
 
@@ -119,6 +119,6 @@ REST-Server-API : **3000**,
 Angular-App : **4200**, 
 Composer-Playground : **8080**
 
-** Eğer lokalde çalışıyorsanız, yaptığınız değişiklikler **kaydedilmeyecek** ve uygulamayı her seferinde yeniden başlatacaksınız. Bunun için bir sunucuya bağlanmanızı tavsiye ediyoruz. Angular-App veya Composer-Playground u başlatmak için baştaki koşullar geçerliyken (Angular için `npm start` ve Playground için `composer-playground`) Composer-Rest-Server a her seferinde iş ağı tanımlamak istemiyorsanız, geçerli komutu ~/fabric-dev-servers/tutorial-network içerisindeyken girin `composer-rest-server -c admin@tutorial-network -n never -w true`
+** Eğer lokalde çalışıyorsanız, yaptığınız değişiklikler **kaydedilmeyecek** ve uygulamayı her seferinde yeniden başlatacaksınız. Bunun için bir sunucuya bağlanmanızı tavsiye ediyoruz. Angular-App veya Composer-Playground u başlatmak için baştaki koşullar geçerliyken (Angular için `npm start` ve Playground için `composer-playground`) Composer-Rest-Server a her seferinde iş ağı tanımlamak istemiyorsanız, geçerli komutu **~/fabric-dev-servers/tutorial-network** içerisindeyken girin `composer-rest-server -c admin@tutorial-network -n never -w true`
 
 * Kuruluma, Composer-Rest-Server a **Queries(Sorgular)** ekleyerek devam edeceğiz, yakında buradan ulaşabilirsiniz.
