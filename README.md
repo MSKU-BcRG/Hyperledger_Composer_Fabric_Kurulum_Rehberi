@@ -132,17 +132,18 @@ Sorgular ekleyebilmek için ilk olarak iş ağımızı güncellemeliyiz:
 * **~/fabric-dev-servers/tutorial-network** içerisinde iken " **queries.qry** " adında boş bir belge oluşturun. İçeriğine, repo **Sorgu** da verilen dosyayı yapıştırın, kaydedin.
 
 Ardından iş ağının versiyonunu değiştireceğiz. Bunun için **~/fabric-dev-servers/tutorial-network** içerisine girin, **package.json** dosyasını açın ve "0.0.1" olan versiyon özelliğini "0.0.2" olarak değiştirin, kaydedin. 
+
 ![versiyon](https://user-images.githubusercontent.com/29989590/42807685-1f35e6c8-89ba-11e8-85cf-4b0c58b95258.png)
 
 **tutorial-network** içerisinde olduğunuzdan eminseniz `composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.2.bna` komutunu çalıştırın. Bu komuttan sonra klasörünüze " tutorial-network@0.0.2.bna " adında bir dosya gelmiş olmalı.
 
-Versiyonunu yükselttiğimiz iş ağımıza, yapılan değişiklikleri adapte etmeliyiz. Bunun için " tutorial-network@0.0.2.bna " dosyasının bulunduğu klasöre giderek(adımları takip ettiyseniz klasör tutorial-network olacaktır) verilen komutları -sırasıyla- çalıştırın:
+Versiyonunu yükselttiğimiz iş ağımıza, yapılan değişiklikleri adapte etmeliyiz. Bunun için " tutorial-network@0.0.2.bna " dosyasının bulunduğu klasöre giderek aşağıda verilen komutları -sırasıyla- çalıştırın:
 
 * `composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.2.bna`
 * `composer network upgrade -c PeerAdmin@hlfv1 -n tutorial-network -V 0.0.2`
 * `composer network ping -c admin@tutorial-network | grep Business` //burada size versiyonu tanımlayacaktır.
 
-Yenilenmiş Composer-Rest-Server kullanıma hazır. Önceki versiyondan farklı olarak Rest-Server ı **tutorial-network** e adapte ettik. Şimdi cd ile **~/fabric-dev-servers/tutorial-network** içine girin ve `composer-rest-server` ı çalıştırın.
+Yenilenmiş Composer-Rest-Server kullanıma hazır. Şimdi cd ile **~/fabric-dev-servers/tutorial-network** içine girin ve `composer-rest-server` ı çalıştırın.
 
 * Kart adı olarak: **admin@tutorial-network**
 * **Never use Namespaces**
@@ -152,5 +153,5 @@ Yenilenmiş Composer-Rest-Server kullanıma hazır. Önceki versiyondan farklı 
 Kartı yeniden tanımladığınızda, sistem sizi **localhost** port **3000** ile yönlendirecek.
 
 ** Bu noktada, **eski versiyon Composer-Rest-Server** ın başka bir terminalde **açık olmadığından, kapalı olduğundan** emin olun. Eski ve yeni sürümler aynı portta -3000- çalışmak istediği için hata alabilirsiniz.
-** Ayrıca **Eduroam** ağında kartın yeni versiyonunu indirmek isterseniz hata alabilirsiniz. Çözüme ve önerilere ilişkin Error Handling Issue ya bakabilirsiniz.
+** Ayrıca **Eduroam** ağında kartın yeni versiyonunu indirmek isterseniz hata alabilirsiniz. Çözüm ve önerilere ilişkin Error Handling Issue ya bakabilirsiniz.
 ** Ayrıntılı bilgi için bknz: https://hyperledger.github.io/composer/latest/tutorials/queries
