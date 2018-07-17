@@ -131,9 +131,9 @@ Sorgular ekleyebilmek için ilk olarak iş ağımızı güncellemeliyiz:
 * **~/fabric-dev-servers/tutorial-network/lib** içerisindeki " **logic.js** " dosyasının içeriğinin tamamını silip yerine repo **Sorgu** da verilen dosyayı yapıştırın, kaydedin.
 * **~/fabric-dev-servers/tutorial-network** içerisinde iken " **queries.qry** " adında boş bir belge oluşturun. İçeriğine, repo **Sorgu** da verilen dosyayı yapıştırın, kaydedin.
 
-Ardından iş ağının versiyonunu değiştireceğiz. Bunun için **~/fabric-dev-servers/tutorial-network** içerisine girin, **package.json** dosyasını açın ve "0.0.1" olan versiyon özelliğini "0.0.2" olarak değiştirin, kaydedin. **tutorial-network** içerisinde olduğunuzdan eminseniz `composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.2.bna` komutunu çalıştırın. Bu komuttan sonra klasörünüze **tutorial-network@0.0.2.bna** adında bir dosya gelmiş olmalı.
+Ardından iş ağının versiyonunu değiştireceğiz. Bunun için **~/fabric-dev-servers/tutorial-network** içerisine girin, **package.json** dosyasını açın ve "0.0.1" olan versiyon özelliğini "0.0.2" olarak değiştirin, kaydedin. **tutorial-network** içerisinde olduğunuzdan eminseniz `composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.2.bna` komutunu çalıştırın. Bu komuttan sonra klasörünüze " tutorial-network@0.0.2.bna " adında bir dosya gelmiş olmalı.
 
-Versiyonunu yükselttiğimiz iş ağımıza, yapılan değişiklikleri adapte etmeliyiz. Bunun için **tutorial-network@0.0.2.bna** dosyasının bulunduğu klasöre giderek(adımları takip ettiyseniz klasör tutorial-network olacaktır) verilen komutları -sırasıyla- çalıştırın:
+Versiyonunu yükselttiğimiz iş ağımıza, yapılan değişiklikleri adapte etmeliyiz. Bunun için " tutorial-network@0.0.2.bna " dosyasının bulunduğu klasöre giderek(adımları takip ettiyseniz klasör tutorial-network olacaktır) verilen komutları -sırasıyla- çalıştırın:
 
 * `composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.2.bna`
 * `composer network upgrade -c PeerAdmin@hlfv1 -n tutorial-network -V 0.0.2`
@@ -147,4 +147,7 @@ Yenilenmiş Composer-Rest-Server kullanıma hazır. Önceki versiyondan farklı 
 // Böylelikle yeni versiyona kartımızı tanımlatmış olduk.
 
 Kartı yeniden tanımladığınızda, sistem sizi **localhost** port **3000** ile yönlendirecek.
+
 ** Bu noktada, **eski versiyon Composer-Rest-Server** ın başka bir terminalde **açık olmadığından, kapalı olduğundan** emin olun. Eski ve yeni sürümler aynı portta -3000- çalışmak istediği için hata alabilirsiniz.
+
+** Ayrıca **Eduroam** ağında kartın yeni versiyonunu indirmek isterseniz hata alabilirsiniz. Çözüme ve önerilere ilişkin Error Handling Issue ya bakabilirsiniz.
