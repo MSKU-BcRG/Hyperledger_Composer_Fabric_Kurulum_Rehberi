@@ -13,6 +13,7 @@ Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmam
 * [Geliştiriciler İçin](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#geli%C5%9Ftiriciler-%C4%B0%C3%A7in)
 * [Composer-Rest-Server](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#composer-rest-server)
 * [Angular-App Kurulumu](https://github.com/MSKU-BcRG/Hyperledger_Composer_Fabric_Kurulum_Rehberi#angular-app-kurulumu)
+* [Composer Rest Server'a Sorgu Eklemek] ()
 
 Ön Koşullar
 ------------------
@@ -75,9 +76,9 @@ Artık geliştiriciler için olan kısma gelmiş bulunuyoruz. cd komutu ile **~/
 
 İş ağı tanımlamak için verilen adımları uygulayın:
 
-* **~/fabric-dev-servers/tutorial-network/models** içerisinden " **org.example.mynetwork.cto** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
-* **~/fabric-dev-servers/tutorial-network/lib** içerisindeki " **logic.js** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
-* **~/fabric-dev-servers/tutorial-network** içerisindeki " **permissions.acl** " dosyasının içeriğinin tamamını silip yerine repo da verilen dosyayı yapıştırın, kaydedin.
+* **~/fabric-dev-servers/tutorial-network/models** içerisinden " **org.example.mynetwork.cto** " dosyasının içeriğinin tamamını silip yerine repo **Kurulum** da verilen dosyayı yapıştırın, kaydedin.
+* **~/fabric-dev-servers/tutorial-network/lib** içerisindeki " **logic.js** " dosyasının içeriğinin tamamını silip yerine repo **Kurulum** da verilen dosyayı yapıştırın, kaydedin.
+* **~/fabric-dev-servers/tutorial-network** içerisindeki " **permissions.acl** " dosyasının içeriğinin tamamını silip yerine repo **Kurulum** da verilen dosyayı yapıştırın, kaydedin.
 
 İş ağını dağıtmak için verilen adımları uygulayın:
 
@@ -122,4 +123,28 @@ Composer-Playground : **8080**
 
 ** Eğer lokalde çalışıyorsanız, yaptığınız değişiklikler **kaydedilmeyecek** ve uygulamayı her seferinde yeniden başlatacaksınız. Bunun için bir sunucuya bağlanmanızı tavsiye ediyoruz. Angular-App veya Composer-Playground u başlatmak için baştaki koşullar geçerliyken (Angular için `npm start` ve Playground için `composer-playground`) Composer-Rest-Server a her seferinde iş ağı tanımlamak istemiyorsanız, geçerli komutu **~/fabric-dev-servers/tutorial-network** içerisindeyken girin `composer-rest-server -c admin@tutorial-network -n never -w true`
 
-* Kuruluma, Composer-Rest-Server a **Queries(Sorgular)** ekleyerek devam edeceğiz, yakında buradan ulaşabilirsiniz.
+Composer Rest Server'a Sorgu Eklemek
+------------------------------------------
+
+Sorgular ekleyebilmek için ilk olarak iş ağımızı güncellemeliyiz:
+* **~/fabric-dev-servers/tutorial-network/models** içerisinden " **org.example.mynetwork.cto** " dosyasının içeriğine(sonuna), repo **Sorgu** da verilen kodları **ekleyin**, kaydedin.
+* **~/fabric-dev-servers/tutorial-network/lib** içerisindeki " **logic.js** " dosyasının içeriğinin tamamını silip yerine repo **Sorgu** da verilen dosyayı yapıştırın, kaydedin.
+* **~/fabric-dev-servers/tutorial-network** içerisinde iken " **queries.qry** " adında boş bir belge oluşturun. İçeriğine, repo **Sorgu** da verilen dosyayı yapıştırın, kaydedin.
+
+Ardından iş ağının versiyonunu değiştireceğiz. Bunun için **~/fabric-dev-servers/tutorial-network** içerisine girin, **package.json** dosyasını açın ve "0.0.1" olan versiyon özelliğini "0.0.2" olarak değiştirin, kaydedin. **tutorial-network** içerisinde olduğunuzdan eminseniz `composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.2.bna` komutunu çalıştırın. Bu komuttan sonra klasörünüze **tutorial-network@0.0.2.bna** adında bir dosya gelmiş olmalı.
+
+Versiyonunu yükselttiğimiz iş ağımıza, yapılan değişiklikleri adapte etmeliyiz. Bunun için **tutorial-network@0.0.2.bna** dosyasının bulunduğu klasöre giderek(adımları takip ettiyseniz klasör tutorial-network olacaktır) verilen komutları -sırasıyla- çalıştırın:
+
+* `composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.2.bna`
+* `composer network upgrade -c PeerAdmin@hlfv1 -n tutorial-network -V 0.0.2`
+* `composer network ping -c admin@tutorial-network | grep Business` //burada size versiyonu tanımlayacaktır.
+
+Yenilenmiş Composer-Rest-Server kullanıma hazır. Önceki versiyondan farklı olarak Rest-Server ı **tutorial-network** e adapte ettik. Şimdi cd ile **~/fabric-dev-servers/tutorial-network** içine girin ve `composer-rest-server` ı çalıştırın.
+
+* Kart adı olarak: **admin@tutorial-network**
+* **Never use Namespaces**
+* Generated API: **No** ; TLS Security: **No** ; Event Publication: **Yes**
+// Böylelikle yeni versiyona kartımızı tanımlatmış olduk.
+
+Kartı yeniden tanımladığınızda, sistem sizi **localhost** port **3000** ile yönlendirecek.
+** Bu noktada, **eski versiyon Composer-Rest-Server** ın başka bir terminalde **açık olmadığından, kapalı olduğundan** emin olun. Eski ve yeni sürümler aynı portta -3000- çalışmak istediği için hata alabilirsiniz.
