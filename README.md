@@ -1,6 +1,7 @@
 # Hyperledger Composer ve Fabric Kurulum Rehberi #
 
 Merhaba, hazırsanız kuruluma başlıyoruz. 
+
 Ana Kaynak : https://hyperledger.github.io/composer/unstable/installing/installing-index.html
 
 Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmamıza izin veriyor. Composer kurulumuna başlamadan önce **ön koşullar** sağlanmalıdır. Bu sayfada okulumuz makinelerinin çoğunun **UBUNTU 16.04** kullandığını varsayarak bu dağıtım için kurulum yapacağız.
@@ -27,6 +28,7 @@ Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmam
 * Python: 2.7.x versiyon 
 * Sevdiğiniz bir kod editörü (tercihe bağlı).
 
+** sanal makinede çalışmanızı tavsiye ederim
 ** ileride kullanacağımız bir komut bize ön koşulları indirecek fakat makineden makineye farklı hatalar alınabiliyor. Hata düzeyini minimalize etmek için siz de ön koşulları şimdiden manuel olarak indirebilirsiniz. (örneğin` sudo apt-get install docker.io ` vb.)
 
 Verilen komutları -sırasıyla- girin:
@@ -40,13 +42,20 @@ Geliştirme Ortamının İndirilmesi
 ---------------------------------
 
 Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen komutları -sırasıyla- girin:
-** Not: Bu aşamalarda aldığınız herhangi bir hatayı göz ardı etmemeniz tavsiye edilir. Hata ileriki aşamalarda tekrarlayacaktır. Çözümler için issue lara bakabilirsiniz. ** Not: npm, `su` ya da `sudo` ile kullanılamaz.
+** Not: npm, `su` ya da `sudo` ile kullanılamaz.
 
 * `npm install -g composer-cli`
 * `npm install -g composer-rest-server`
 * `npm install -g generator-hyperledger-composer`
 * `npm install -g yo`
 * `npm install -g composer-playground`
+
+** Not: Herhangi bir adımda hata ile karışalışırsanız. İleride sorun yaşamanız yüksek ihtimaldir. Bu yüzden bu adımların hepsini hatasız bir şekilde yaptığınızdan emin olunuz.
+
+** Not: Hata ile karşılaşmanız durumunda, tekrar kurmayı deneyiniz. Hata devam ediyorsa :
+* `rm -rvf /usr/local/lib/node_modules`
+çalıştırdıktan sonra, bilgisayarınızı açıp tekrar deneyiniz. Yalnız dikkatli olunuz, node modullerini kullanan başka bir uygulamanız varsa etkilenebilir.
+
 
 Hyperledger Fabric Kurulumu
 ------------------------------
