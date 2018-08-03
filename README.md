@@ -53,7 +53,7 @@ Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen kom
 * `npm install -g yo`
 * `npm install -g composer-playground`
 
-** Not: Herhangi bir adımda hata ile karışalışırsanız. İleride sorun yaşamanız yüksek ihtimaldir. Bu yüzden bu adımların hepsini hatasız bir şekilde yaptığınızdan emin olunuz.
+** Not: Bu adımların hepsini hatasız bir şekilde yaptığınızdan emin olunuz.
 
 ![mnb](https://user-images.githubusercontent.com/29989590/43640811-0012a844-972a-11e8-845e-94814fddd913.png)
 Tekli Organizasyon 
