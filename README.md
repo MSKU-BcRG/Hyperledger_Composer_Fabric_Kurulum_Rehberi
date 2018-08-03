@@ -55,6 +55,10 @@ Sıra geliştirme ortamını indirmekte. Bileşenleri indirmek için verilen kom
 
 ** Not: Herhangi bir adımda hata ile karışalışırsanız. İleride sorun yaşamanız yüksek ihtimaldir. Bu yüzden bu adımların hepsini hatasız bir şekilde yaptığınızdan emin olunuz.
 
+![mnb](https://user-images.githubusercontent.com/29989590/43640811-0012a844-972a-11e8-845e-94814fddd913.png)
+Tekli Organizasyon 
+source:https://www.udemy.com/hyperledger/
+
 ** Not: Hata ile karşılaşmanız durumunda, tekrar kurmayı deneyiniz. Hata devam ediyorsa :
 * `rm -rvf /usr/local/lib/node_modules`
 çalıştırdıktan sonra, bilgisayarınızı açıp tekrar deneyiniz. Yalnız dikkatli olunuz, node modullerini kullanan başka bir uygulamanız varsa etkilenebilir.
