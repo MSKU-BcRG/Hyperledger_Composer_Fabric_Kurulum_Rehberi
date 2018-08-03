@@ -28,6 +28,9 @@ Sistem öncelikle bir tool olan Composer ı, ardından framework Fabric i kurmam
 * Python: 2.7.x versiyon 
 * Sevdiğiniz bir kod editörü (tercihe bağlı).
 
+![ubuntu](https://user-images.githubusercontent.com/29989590/43631820-f22e971e-970c-11e8-81a6-c8bd245867ef.png)
+source:https://www.udemy.com/hyperledger/
+
 ** sanal makinede çalışmanızı tavsiye ederim
 ** ileride kullanacağımız bir komut bize ön koşulları indirecek fakat makineden makineye farklı hatalar alınabiliyor. Hata düzeyini minimalize etmek için siz de ön koşulları şimdiden manuel olarak indirebilirsiniz. (örneğin` sudo apt-get install docker.io ` vb.)
 
